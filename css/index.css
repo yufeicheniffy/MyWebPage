@@ -125,7 +125,8 @@ main{
 }
 .profileList dt{
     font-weight: bold;
-    width:30%
+    width:30%;
+    clear:both;
 }
 .profileList dd{
     color:#9da0a7;
