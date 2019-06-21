@@ -1,10 +1,15 @@
 body{
     background-color: black;
+    color:white;
+}
+*{
+    padding: 0;
     margin:0;
-    padding:0;
-    color: white;
 }
 header{
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .clearfix::after{
@@ -31,7 +36,7 @@ header{
 }
 
 .topNavBar>ul>li>a:hover{
-    border-bottom-color: #DC6465 ;
+    border-bottom-color: lightblue ;
 }
 .topNavBar>ul{
     list-style: none;
@@ -51,19 +56,103 @@ header{
     display: block;
     line-height: 50px;
 }
-.topBar::after{
-    content:'';
-    display:block;
-    clear:both;
-}
 
 #topSpan1{
-    color: #DC6465;
+    color: lightblue;
 }
 #topSpan2{
-    color: grey;
+    color: snow;
 }
 
-.picture>img{
-    display: block;
+.banner{
+    height:512px;
+    background-image: url("../image/banner2.png");
+    background-color: lightblue;
+    background-position: center center;
+    background-size:cover;
+}
+main{
+    max-width: 930px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    color: black;
+}
+.profile{
+    margin: 58px 15px;
+}
+.picture{
+ margin: 58px 50px;
+}
+.welcomeIcon>span{
+    background-color: lightblue;
+    color: snow;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 4px 12px;
+    display: inline-block;
+    line-height: 20px;
+    font-family: "Arial Black";
+}
+.welcomeIcon .triangle{
+    border: 10px solid lightblue;
+    width: 0px;
+    height:0px;
+    border-top: 0px;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    margin-left: 6px;
+}
+.profile-info{
+    border-bottom: solid 1px rgb(222,222,222);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.profile{
+    width: 45%;
+    color: #3d4451;
+}
+.profile-info>h1{
+    padding:10px 0;
+}
+.profile-info>span{
+    font-size:18px;
+    font-family: FangSong;
+}
+.profileList dt,dd{
+    float: left;
+    padding: 10px 0;
+}
+.profileList dt{
+    font-weight: bold;
+    width:30%
+}
+.profileList dd{
+    color:#9da0a7;
+    width:70%;
+}
+footer{
+    background-color: lightblue;
+}
+footer>ul{
+    list-style: none;
+    text-align: center;
+}
+
+footer>ul>li{
+    display: inline-block;
+    padding:2px 20px;
+}
+footer .icon{
+   height: 30px;
+    width: 30px;
+    fill: white;
+    padding:10px;
+}
+footer .icon:hover{
+    border-radius: 50%;
+    background-color: deepskyblue;
+}
+section{
+    text-align: center;
 }

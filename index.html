@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <link href="css/index.css" rel="stylesheet">
     <title>Yufei Rusume</title>
+    <script src="http://at.alicdn.com/t/font_1255628_4zdfazof698.js"></script>
+    <style type="text/css">
+        .icon {
+            width: 1em; height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
-<header>
-    <div class="topBar">
+<header style="width:100%">
+    <div class="topBar clearfix">
         <a class="logo" style="float:left;">
             <b><span id="topSpan1">Yufei</span><span id="topSpan2" style="padding-left: 3px">Page</span></b>
         </a>
@@ -25,50 +34,69 @@
     </div>
 </header>
 
-<div class="banner" style="background-image: url(#)"></div>
+<div class="banner"></div>
 <main>
-    <div class="profileCard">
-        <div class="picture">
-            <img src="#" alt="profile picture">
+    <div class="profileCard clearfix">
+        <div class="picture" style="float: left">
+            <img src="image/selfie.png" alt="selfie :)" width="300px">
         </div>
-        <div class="profile">
-            <span>Hello</span>
-            <h1> I am Yufei Chen</h1>
-            <h2>Developer and Gamer</h2>
-            <hr>
-            <dl>
-                <dt>AGE</dt>
-                <dd>26</dd>
-                <dt>ADDRESS</dt>
-                <dd>GLASGOW</dd>
-                <dt>E-MAIL</dt>
-                <dd>EFIECHAN@OUTLOOK.COM</dd>
-                <dt>PHONE</dt>
-                <dd>123456</dd>
-            </dl>
+        <div class="profile" style="float: left">
+            <div class="profile-info">
+                <div class="welcomeIcon">
+                    <span>HELLO</span>
+                    <div class="triangle"></div>
+                </div>
+
+                <h1>陈宇飞</h1>
+                <span>欢迎来到一个在赶路的程序员的主页^-^</span>
+            </div>
+            <div class="profileList">
+                <dl class="clearfix">
+                    <dt>年龄</dt>
+                    <dd>26</dd>
+                    <dt>地址</dt>
+                    <dd>GLASGOW</dd>
+                    <dt>E-MAIL</dt>
+                    <dd><a href="mailto:efiechan@outlook.com" style="color: inherit">efiechan@outlook.com</a></dd>
+                    <dt>QQ</dt>
+                    <dd>279459476</dd>
+                </dl>
+            </div>
         </div>
     </div>
     <footer>
         <ul>
-            <li><a href="#"><img src="#" alt="#"></a></li>
-            <li><a href="#"><img src="#" alt="#"></a></li>
-            <li><a href="#"><img src="#" alt="#"></a></li>
-            <li><a href="#"><img src="#" alt="#"></a></li>
-            <li><a href="#"><img src="#" alt="#"></a></li>
-            <li><a href="#"><img src="#" alt="#"></a></li>
-            <li><a href="#"><img src="#" alt="#"></a></li>
-            <li><a href="#"><img src="#" alt="#"></a></li>
-            <li><a href="#"><img src="#" alt="#"></a></li>
+            <li><a href="https://github.com/yufeicheniffy" target="_blank">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            </a></li>
+            <li><a href="https://yufeicheniffy.github.io/hexoBlog.github.io/" target="_blank">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-blog"></use>
+                </svg>
+            </a></li>
+            <li><a href="#">
+                <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-ins"></use>
+            </svg>
+            </a></li>
+            <li><a href="#">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            </a></li>
         </ul>
     </footer>
-    <div class="download">
+</main>
+<section class="download-resume">
+    <div class="download-button">
         <a href="###">
             <button> Download</button>
         </a>
         <p>HELLO, I AM YUFEI , A BEGGINER</p>
     </div>
-</main>
-
+</section>
 <section class="professionalSkill">
     <h1>Professional Skills</h1>
     <ul>
