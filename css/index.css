@@ -1,17 +1,31 @@
 body{
-    background-color: black;
+    background-color: rgb(39,41,46);
     color:white;
 }
 *{
     padding: 0;
     margin:0;
 }
+a{
+    text-decoration: none;
+}
 header{
     position: fixed;
     top: 0;
     left: 0;
 }
+main{
+    background-color: white;
+    color: black;
+    margin-top: -300px;
+    box-shadow: 0px 0px 10px -1px rgba(255,255,255,1);
+}
 
+.fixedWindow{
+    max-width: 930px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .clearfix::after{
     content:'';
     display:block;
@@ -37,6 +51,7 @@ header{
 
 .topNavBar>ul>li>a:hover{
     border-bottom-color: lightblue ;
+    border-radius: 1px;
 }
 .topNavBar>ul{
     list-style: none;
@@ -71,13 +86,8 @@ header{
     background-position: center center;
     background-size:cover;
 }
-main{
-    max-width: 930px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: white;
-    color: black;
-}
+
+
 .profile{
     margin: 58px 15px;
 }
@@ -117,7 +127,7 @@ main{
 }
 .profile-info>span{
     font-size:18px;
-    font-family: FangSong;
+    font-family: KaiTi;
 }
 .profileList dt,dd{
     float: left;
@@ -152,8 +162,152 @@ footer .icon{
 }
 footer .icon:hover{
     border-radius: 50%;
-    background-color: deepskyblue;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color 1.3s;
 }
-section{
+.download-resume{
     text-align: center;
+    margin-top: 35px;
+}
+.download-button>a{
+    padding: 19px 55px;
+    font-size: 18px;
+    background-color: rgb(39,41,46);
+    border: 2px rgb(64,71,84) solid;
+    border-radius: 5px;
+    display: inline-block;
+    color: rgb(152,152,157);
+    transition: box-shadow 0.5s;
+}
+.download-button>a:hover{
+    box-shadow: 0px 0px 9px 3px rgba(255,255,255,1);
+}
+.download-button>p{
+    margin-top: 25px;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.professionalSkill{
+    margin-top: 40px;
+    text-align: center;
+}
+.sectionTitle{
+    color: rgb(152,152,157);
+    font-size: 34px;
+    font-family: "Microsoft YaHei";
+}
+.professionalSkill>ul{
+    list-style: none;
+}
+.professionalSkill>ul>li{
+      float: left;
+      width: 48%;
+    clear: left;
+    padding:20px 0;
+    text-align: left;
+    color:#9c9c9c
+  }
+.professionalSkill>ul>li:nth-child(even){
+    float: right;
+    width: 48%;
+    clear: right;
+}
+.skillBar{
+    background: rgb(69,86,97);
+    border-radius: 2px;
+    margin:5px 0px;
+}
+.skillBar .skillBarValue{
+    background: lightblue;
+    border-radius: 2px;
+    height: 5px;
+}
+.Project{
+    text-align: center;
+    margin-top: 30px;
+}
+.Project>nav{
+    display: inline-block;
+    vertical-align: top;
+}
+.Project>nav>ul{
+    list-style: none;
+}
+.Project>nav>ul>li{
+    display: inline-block;
+    padding: 20px 30px 5px;
+    cursor: pointer;
+}
+.Project>nav>.moveBar{
+    height:5px;
+    width: 100%;
+    background-color:rgb(69,86,97);
+    border-radius: 2px;
+}
+.moveBar>.touchBar-State1{
+    width: 30%;
+    height:5px;
+    background-color: lightblue;
+    border-radius: 2px;
+    position: relative;
+    left: 0px;
+    transition: left 0.5s;
+}
+.moveBar>.touchBar-State2{
+    width: 30%;
+    height:5px;
+    background-color: lightblue;
+    border-radius: 2px;
+    position: relative;
+    left: 95px;
+    transition: left 0.5s;
+}
+.moveBar>.touchBar-State3{
+    width: 34%;
+    height:5px;
+    background-color: lightblue;
+    border-radius: 2px;
+    position: relative;
+    left: 203px;
+    transition: left 0.5s;
+}
+.portfolio{
+    position: relative;
+    margin-top: 20px;
+    height: 576px ;
+}
+#portfolioItem1{
+    position: absolute;
+    top:0;
+    left:0;
+    display: block;
+}
+#portfolioItem2{
+    position: absolute;
+    top:0;
+    left:634px;
+    display: block;
+}
+#portfolioItem3{
+    position: absolute;
+    top: 298px;
+    left: 634px;
+    display: block;
+}
+
+#portfolioItem1>article{
+    background-image: url("/image/portfolio.jpg");
+    height: 576px;
+    width: 607px;
+}
+#portfolioItem2>article {
+    background-image: url("/image/portfolio2.jpg");
+    height: 278px;
+    width: 294px;
+}
+#portfolioItem3>article{
+    background-image: url("/image/p.jpg");
+    height: 278px;
+    width: 294px;
 }

@@ -35,7 +35,7 @@
 </header>
 
 <div class="banner"></div>
-<main>
+<main class="fixedWindow">
     <div class="profileCard clearfix">
         <div class="picture" style="float: left">
             <img src="image/selfie.png" alt="selfie :)" width="300px">
@@ -89,39 +89,80 @@
         </ul>
     </footer>
 </main>
-<section class="download-resume">
+<section class="download-resume fixedWindow">
     <div class="download-button">
-        <a href="###">
-            <button> Download</button>
-        </a>
-        <p>HELLO, I AM YUFEI , A BEGGINER</p>
+        <a href="test.html" download>DOWNLOAD RESUME</a>
+        <p>Hello! I’m Robert Smith. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.</p>
     </div>
 </section>
-<section class="professionalSkill">
-    <h1>Professional Skills</h1>
-    <ul>
-        <li>HTML&CSS</li>
-        <li>JAVASCRIPT</li>
-        <li>JAVA&PYTHON</li>
-        <li>MYSQL</li>
-        <li>MACHINE LEARNING</li>
-        <li>HTTP</li>
+<section class="professionalSkill fixedWindow">
+    <h1 class="sectionTitle">技术栈</h1>
+    <ul class="clearfix">
+        <li>HTML&CSS
+        <div class="skillBar">
+            <div class="skillBarValue" style="width: 70%"></div>
+        </div></li>
+        <li>JAVASCRIPT
+            <div class="skillBar">
+                <div class="skillBarValue" style="width: 80%"></div>
+            </div></li>
+        <li>JAVA&PYTHON
+            <div class="skillBar">
+                <div class="skillBarValue" style="width: 80%"></div>
+            </div></li>
+        <li>MYSQL
+            <div class="skillBar">
+                <div class="skillBarValue" style="width: 55%"></div>
+            </div></li>
+        <li>MACHINE LEARNING
+            <div class="skillBar">
+                <div class="skillBarValue" style="width: 60%"></div>
+            </div></li>
+        <li>HTTP
+            <div class="skillBar">
+                <div class="skillBarValue" style="width: 70%"></div>
+            </div></li>
     </ul>
 </section>
 
-<section class="Project">
-    <h1>Projects</h1>
+<section class="Project fixedWindow">
+    <h1 class="sectionTitle">作品集</h1>
     <nav>
         <ul>
-            <li>ALL</li>
-            <li>VUE</li>
-            <li>JS&CSS</li>
+            <li id="buttonAll">ALL</li>
+            <li id="buttonVUE">VUE</li>
+            <li id="buttonJS">JS&CSS</li>
         </ul>
+        <div class="moveBar">
+            <div id="PortfolioTouchBar" class="touchBar-State1">
+            </div>
+        </div>
+        <script>
+            let buttonALL=document.getElementById("buttonAll")
+            let buttonVUE=document.getElementById("buttonVUE")
+            let buttonJS=document.getElementById("buttonJS")
+            let touchBar=document.getElementById("PortfolioTouchBar")
+            buttonALL.onclick=function () {
+                touchBar.className="touchBar-State1"
+            }
+            buttonVUE.onclick=function () {
+                touchBar.className="touchBar-State2"
+            }
+            buttonJS.onclick=function () {
+                touchBar.className="touchBar-State3"
+            }
+        </script>
     </nav>
-    <div class="all">
-        <div class="P1"></div>
-        <div class="P2"></div>
-        <div class="P3"></div>
+    <div class="portfolio">
+        <div id="portfolioItem1">
+            <article id="portfolioItem1a"></article>
+        </div>
+        <div id="portfolioItem2">
+            <article></article>
+        </div>
+        <div id="portfolioItem3">
+            <article></article>
+        </div>
     </div>
 </section>
 </body>
