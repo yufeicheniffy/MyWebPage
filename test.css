@@ -1,25 +1,9 @@
-*{
-    padding: 0;
-    margin: 0;
-}
-.clearfix::after{
-    content:'';
-    display:block;
-    clear:both;
-    width: 100%;
-}
-.banner{
-    width: 600px;
+.vertical-outer {
+    display: table;
+    height:500px;
 }
 
-.clearfix dt{
-    float: left;
-    width: 50%;
-    /*clear: left;*/
-    line-height: 50px;
-}
-.clearfix dd{
-    float: left;
-    width: 50%;
-    line-height: 50px;
+.vertical-inner {
+    display: table-cell;
+    vertical-align: middle
 }
