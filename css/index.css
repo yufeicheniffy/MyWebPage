@@ -8,6 +8,10 @@ body {
     margin: 0;
 }
 
+ul {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
 }
@@ -26,9 +30,18 @@ main {
 }
 
 .fixedWindow {
-    max-width: 930px;
+    max-width: 0px;
     margin-left: auto;
     margin-right: auto;
+    transition: all 1s;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.fixedWindow.windowActive {
+    max-width: 930px;
+    overflow: hidden;
+    visibility: visible;
 }
 
 .clearfix::after {
@@ -39,10 +52,10 @@ main {
 
 .loading {
     height: 100vh;
-    background-color: lightblue;
+    background-color: white;
     z-index: 1;
     width: 100%;
-    position: absolute;
+    position: fixed;
 }
 
 #loadingIcon::before {
@@ -59,7 +72,7 @@ main {
     border-radius: 50%;
     transition: all;
     z-index: 1;
-    animation: loadingIconAnimation 1s infinite;
+    animation: loadingIconAnimation 2s infinite;
 }
 
 #loadingIcon::after {
@@ -76,8 +89,8 @@ main {
     border-radius: 50%;
     transition: all;
     z-index: 1;
-    animation: loadingIconAnimation 1s infinite;
-    animation-delay: 0.5s;
+    animation: loadingIconAnimation 2s infinite;
+    animation-delay: 1s;
 }
 
 @keyframes loadingIconAnimation {
@@ -90,22 +103,26 @@ main {
     }
 
 }
+
 .topBar {
-    padding: 10px 20px;
+    padding: 20px 20px;
     display: flex;
     justify-content: space-between;
     align-content: center;
     transition: all 0.5s;
     z-index: 5;
 }
-.barActive{
+
+.barActive {
     background-color: rgba(165, 195, 204, 0.9);
     padding: 0px 20px;
 }
-.topNavBar{
+
+.topNavBar {
     display: flex;
-    align-items:  center;
+    align-items: center;
 }
+
 .topNavBar > ul {
     display: flex;
     justify-content: space-around;
@@ -113,24 +130,84 @@ main {
     padding-top: 5px;
     align-items: center;
 }
-.topNavBar > ul > li{
+
+.topNavBar > ul > li {
     padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
+
+.aBorder {
+    content: '';
+    height: 3px;
+    background-color: lightblue;
+    border-radius: 3px;
+    transition: all 0.3s;
+    width: 0;
+}
+
+li > .aBorderHover {
+    width: 100%;
+}
+
+li > .aBorderClick {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
 .topNavBar > ul > li > a {
     font-size: 12px;
     font-weight: bold;
     text-decoration: none;
     padding-bottom: 3px;
-    border-bottom: transparent 3px solid;
-    border-top: transparent 3px solid;
     color: rgba(255, 255, 255, 0.7);
     display: block;
 }
 
-.topNavBar > ul > li > a:hover {
-    border-bottom-color: lightblue;
-    border-radius: 1px;
+.navMenu {
+    position: absolute;
+    top: 23px;
+    background-color: transparent;
+    border-radius: 4px;
+    visibility: hidden;
+    margin-left: 100%;
+    transition: margin-left 0.3s;
+    background-color: rgba(165, 195, 204, 0.9);
 }
+
+.navMenu.navMenuActive {
+    visibility: visible;
+    margin-left: 30%;
+}
+
+.navMenu > li {
+    padding: 5px 5px;
+    display: inline-block;
+}
+
+.navMenu > li:after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 3px;
+    border-radius: 2px;
+    background-color: transparent;
+    transition: all 0.5s;
+}
+
+.navMenu > li:hover:after {
+    width: 100%;
+    background-color: lightblue;
+}
+
+.navMenu > li > a {
+    word-break: keep-all;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: bold;
+    font-family: KaiTi;
+}
+
 
 .logo {
     font-family: "Arial Black";
@@ -153,11 +230,6 @@ main {
     background-color: lightblue;
     background-position: center center;
     background-size: cover;
-}
-
-
-.profile {
-    margin: 58px 15px;
 }
 
 .picture {
@@ -191,9 +263,26 @@ main {
     padding-bottom: 20px;
 }
 
-.profile {
+#profile {
+    margin: 58px 15px;
     width: 45%;
     color: #3d4451;
+    display: none;
+    position: relative;
+}
+
+#profile.elementActivation {
+    display: block;
+    animation: slideRightIn 1s;
+}
+
+@keyframes slideRightIn {
+    0% {
+        left: 500px;
+    }
+    100% {
+        left: 0;
+    }
 }
 
 .profile-info > h1 {
@@ -224,13 +313,24 @@ main {
 footer {
     background-color: lightblue;
 }
-
-footer > ul {
-    list-style: none;
-    text-align: center;
+#footerLink{
+    visibility: hidden;
+}
+#footerLink.elementActivation{
+    visibility: visible;
 }
 
-footer > ul > li {
+#footerLinkList {
+    list-style: none;
+    text-align: center;
+    display: none;
+}
+
+#footerLinkList.elementActivation {
+    display: block;
+}
+
+#footerLinkList > li {
     display: inline-block;
     padding: 2px 20px;
 }
@@ -250,9 +350,22 @@ footer .icon:hover {
 
 .download-resume {
     text-align: center;
-    margin-top: 35px;
+}
+.download-resume.fixedWindow{
+    max-width: 930px ;
+    visibility: visible;
+    position: relative;
+    top:300px;
+    transition: top 3s;
 }
 
+.download-resume.fixedWindow.windowActive{
+    top:20px;
+}
+
+.download-button{
+    margin-top: 35px;
+}
 .download-button > a {
     padding: 19px 55px;
     font-size: 18px;
@@ -273,7 +386,6 @@ footer .icon:hover {
     font-size: 16px;
     line-height: 26px;
 }
-
 .professionalSkill {
     margin-top: 40px;
     text-align: center;
