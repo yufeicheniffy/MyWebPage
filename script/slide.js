@@ -1,7 +1,7 @@
 //Slide Builder
     let currentString = ".slideWindow>.currentSlide"
     let waitingString = ".slideWindow>.waitingSlide"
-    let imageWidth = document.querySelector(".slideWindow>img").clientWidth;
+    let imageWidth = 800
     let animationLib = {
         Bounce: {
             In: {

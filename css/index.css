@@ -28,7 +28,9 @@ main {
     margin-top: -300px;
     box-shadow: 0px 0px 10px -1px rgba(255, 255, 255, 1);
 }
-
+section{
+    z-index: -1;
+}
 .fixedWindow {
     max-width: 0px;
     margin-left: auto;
@@ -110,7 +112,7 @@ main {
     justify-content: space-between;
     align-content: center;
     transition: all 0.5s;
-    z-index: 5;
+    z-index: 10;
 }
 
 .barActive {
@@ -157,7 +159,7 @@ li > .aBorderClick {
 }
 
 .topNavBar > ul > li > a {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
     text-decoration: none;
     padding-bottom: 3px;
@@ -367,6 +369,7 @@ footer .icon:hover {
     margin-top: 35px;
 }
 .download-button > a {
+    z-index: 1;
     padding: 19px 55px;
     font-size: 18px;
     background-color: rgb(39, 41, 46);
