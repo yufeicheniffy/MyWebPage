@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="css/index.css" rel="stylesheet">
+    <link href="css/slide.css" rel="stylesheet">
     <title>Yufei Rusume</title>
     <script src="http://at.alicdn.com/t/font_1255628_4zdfazof698.js"></script>
     <style type="text/css">
@@ -184,17 +185,21 @@
             }
         </script>
     </nav>
-    <div class="portfolio">
-        <div id="portfolioItem1">
-            <article id="portfolioItem1a"></article>
+    <section id="slideSection">
+        <div class="slideModule portfolio">
+            <div class="slideWindow">
+                <!--加入任意轮播-->
+                <img src="image/p.jpg" alt="">
+                <img src="image/portfolio.jpg" alt="">
+                <img src="image/portfolio2.jpg" alt="">
+            </div>
         </div>
-        <div id="portfolioItem2">
-            <article></article>
-        </div>
-        <div id="portfolioItem3">
-            <article></article>
-        </div>
-    </div>
+        <script src="script/anime.min.js"></script>
+        <script src="script/slide.js"></script>
+        <script>
+            let slider1 = new Slide(document.getElementById("slideSection"), animationLib.Slide);
+        </script>
+    </section>
 </section>
 </body>
 <script type='text/javascript' src="script/tween.js"></script>

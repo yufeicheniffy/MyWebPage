@@ -1,0 +1,80 @@
+:root {
+    --img-size: 800px;
+}
+#slideSection{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.slideModule{
+    width: var(--img-size);
+    position: relative;
+}
+.slideWindow{
+    position:relative;
+    overflow: hidden;
+    width: 100%;
+}
+.slideWindow::after{
+    content:'';
+    display: block;
+    padding-left:100%;
+    padding-top: 75%;
+}
+
+.slideWindow>img{
+    position: absolute;
+    height:100%;
+    width: 100%;
+    top: 0;
+    transition: left 0.3s;
+    object-fit: cover;
+}
+.slideFooter{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position:absolute;
+    bottom: 0;
+    z-index: 3;
+    background-color: rgba(0,0,0,0.3);
+}
+.slideFooter>.dots{
+    order: 1;
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slideFooter>.preButton{
+    order: 0;
+    cursor: pointer;
+    margin: 5px 10px;
+}
+.slideFooter>.nextButton{
+    order: 2;
+    cursor: pointer;
+    margin: 5px 10px;
+}
+.slideFooter>.dots>span{
+    display: inline-block;
+    height:10px;
+    width: 10px;
+    border-radius: 6px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #eee;
+    opacity: 0.6;
+}
+.slideFooter>.dots>span.active{
+    width:20px;
+    background-color: grey;
+}
+.currentSlide{
+    left: 0;
+    z-index: 2;
+}
+.waitingSlide{
+    left: 0;
+    z-index: 1;
+}
