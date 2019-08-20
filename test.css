@@ -1,9 +1,0 @@
-.vertical-outer {
-    display: table;
-    height:500px;
-}
-
-.vertical-inner {
-    display: table-cell;
-    vertical-align: middle
-}
