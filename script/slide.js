@@ -119,10 +119,10 @@
                 document.querySelector(".slideModule").appendChild(slideFooter);
                 let preButton = document.createElement('span');
                 preButton.classList.add("preButton");
-                preButton.textContent = "上一页";
+                preButton.textContent = "<";
                 let nextButton = document.createElement('span');
                 nextButton.classList.add("nextButton");
-                nextButton.textContent = "下一页";
+                nextButton.textContent = ">";
                 let dots = document.createElement('div');
                 dots.classList.add("dots");
                 document.querySelector(".slideFooter").appendChild(preButton);

@@ -128,7 +128,7 @@ function getSectionHeight() {
     let aTags = document.querySelectorAll(".topNavBar > ul > li > a");
     let sectionHeight = [];
     for (let i = 0; i < aTags.length; i++) {
-        let tempElement = document.getElementById(aTags[i].attributes.href.value.slice(1,));
+        let tempElement = document.getElementById(aTags[i].attributes.href.value.slice(1,)); //specific id in HTML
         if (tempElement) {
             sectionHeight[i] = tempElement.offsetTop;
         }
