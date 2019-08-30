@@ -43,7 +43,7 @@
                         <li><a href="">作品5</a></li>
                     </ul>
                 </li>
-                <li><a href="#">博客</a>
+                <li><a href="#messageSection">留言板</a>
                     <div class="aBorder"></div>
                 </li>
                 <li><a href="#">日历</a>
@@ -157,7 +157,7 @@
         </li>
     </ul>
 </section>
-<section id=projectIntroduction class="Project fixedWindow">
+<section id=projectIntroduction class="Project fixedWindow SlideIn">
     <h1 class="sectionTitle">作品集</h1>
     <nav>
         <ul>
@@ -200,6 +200,20 @@
             let slider1 = new Slide(document.getElementById("slideSection"), animationLib.Slide);
         </script>
     </section>
+</section>
+<section id="messageSection" class="fixedWindow SlideIn">
+    <div class="messageBoard">
+        <h1 class="sectionTitle">留言板</h1>
+            <ul id="messageDisplay" class="messageDisplay">
+            </ul>
+    </div>
+    <div class="submitMessage">
+        <form id ="messageForm" action="/">
+            <span>Name:</span><input name="name" type="text"  placeholder="佚名">
+            <span>留言:</span><input name="message" type="text" placeholder="无">
+            <button>提交</button>
+        </form>
+    </div>
 </section>
 </body>
 <script type='text/javascript' src="script/tween.js"></script>
