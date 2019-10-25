@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link href="css/index.css" rel="stylesheet">
     <link href="css/slide.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/slide-pumpWindow.css">
     <title>Yufei Rusume</title>
     <script src="http://at.alicdn.com/t/font_1255628_4zdfazof698.js"></script>
     <style type="text/css">
@@ -200,13 +201,41 @@
             let slider1 = new Slide(document.getElementById("slideSection"), animationLib.Slide);
         </script>
         <script>
-            let previewLinks=['www.baidu.com','yufeichen.life'];
-            let codeLides=['www.qq,com','www.bilibili.com'];
+            let previewLinks=['1','2','3'];
+            let codeLinks=['4','5','6'];
             let imgs=Array.from(document.querySelectorAll('.slideWindow > img'));
-            for (let img of imgs){
-                img.
+            let pumpWindows=Array.from([]);
+            let slideWindow=imgs[0].parentElement;
+            for (let index in imgs){
+                let pumpWindow=document.createElement('div');
+                let previewLink=createLinkNode(previewLinks[index],'image/icons/eye.svg','预览链接',60);
+                let codeLink=createLinkNode(codeLinks[index],'image/icons/web-programming.svg','代码链接',60);
+                pumpWindow.appendChild(previewLink);
+                pumpWindow.appendChild(codeLink);
+                pumpWindow.classList.add('pumpWindow');
+                pumpWindows.push(pumpWindow);
+                slideWindow.appendChild(pumpWindow);
+                slideWindow.addEventListener('mouseenter',()=>{
+                    let currentSlide=document.querySelector('.currentSlide');
+                    let currentIndex=imgs.indexOf(currentSlide);
+                    pumpWindows[currentIndex].style.display='block'; });
+                slideWindow.addEventListener('mouseleave',()=>{
+                    let currentSlide=document.querySelector('.currentSlide');
+                    let currentIndex=imgs.indexOf(currentSlide);
+                    pumpWindows[currentIndex].style.display='none';});
             }
-
+            function createLinkNode(linkSrc,imgSrc,title,size) {
+                let link=document.createElement('a');
+                link.href='http://'+linkSrc;
+                let element=document.createElement('img');
+                element.src=imgSrc;
+                element.title=title;
+                element.height=size;
+                element.width=size;
+                element.classList.add('pumpIcon');
+                link.appendChild(element);
+                return link;
+            }
         </script>
     </section>
 </section>
