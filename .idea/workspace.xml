@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6455b2ce-663e-4f39-92e2-033ac147613a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/css/slide-pumpWindow.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/icons/eye.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/icons/web-programming.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
@@ -86,7 +83,7 @@
       <workItem from="1566918418296" duration="599000" />
       <workItem from="1567166774569" duration="8807000" />
       <workItem from="1571218766966" duration="625000" />
-      <workItem from="1571651957125" duration="10205000" />
+      <workItem from="1571651957125" duration="12618000" />
     </task>
     <servers />
   </component>

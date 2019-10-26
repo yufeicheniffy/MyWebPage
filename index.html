@@ -117,7 +117,7 @@
 </main>
 <section class="download-resume fixedWindow">
     <div class="download-button">
-        <a href="https://yufeicheniffy.github.io/ResumeWithAnimation/" download>DOWNLOAD RESUME</a>
+        <a href="https://yufeicheniffy.github.io/ResumeWithAnimation/" target="_blanksss">DOWNLOAD RESUME</a>
         <p>Hello! I’m Robert Smith. Senior Web Developer specializing in front end development. Experienced with all
             stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages
             including JavaScript, SQL, and C. Stng background in project management and customer relations.</p>
@@ -190,9 +190,10 @@
         <div class="slideModule portfolio">
             <div class="slideWindow">
                 <!--加入任意轮播-->
-                <img src="image/p.jpg" alt="">
-                <img src="image/portfolio.jpg" alt="">
-                <img src="image/portfolio2.jpg" alt="">
+                <img src="image/drawBoard.jpg" alt="Drawn boards">
+                <img src="image/resume.jpg" alt="Resume with animation">
+                <img src="image/feiUI.jpg" alt="fei UI">
+                <img src="image/shareBlog.jpg" alt="shareBlog">
             </div>
         </div>
         <script src="script/anime.min.js"></script>
@@ -201,15 +202,19 @@
             let slider1 = new Slide(document.getElementById("slideSection"), animationLib.Slide);
         </script>
         <script>
-            let previewLinks=['1','2','3'];
-            let codeLinks=['4','5','6'];
+            let selfProjects=[
+                {name:'draw board',previewLink:'https://yufeicheniffy.github.io/canvasProject/index.html',codeLink:'https://github.com/yufeicheniffy/canvasProject'},
+                {name:'resume',previewLink: 'https://yufeicheniffy.github.io/ResumeWithAnimation/',codeLink: 'https://github.com/yufeicheniffy/ResumeWithAnimation'},
+                {name:'feiUI',previewLink:'',codeLink:'https://github.com/yufeicheniffy/FeiUI'},
+                {name:'shareBlog',previewLink:'',codeLink:'https://github.com/yufeicheniffy/ShareBlog'}
+            ];
             let imgs=Array.from(document.querySelectorAll('.slideWindow > img'));
             let pumpWindows=Array.from([]);
             let slideWindow=imgs[0].parentElement;
             for (let index in imgs){
                 let pumpWindow=document.createElement('div');
-                let previewLink=createLinkNode(previewLinks[index],'image/icons/eye.svg','预览链接',60);
-                let codeLink=createLinkNode(codeLinks[index],'image/icons/web-programming.svg','代码链接',60);
+                let previewLink=createLinkNode(selfProjects[index].previewLink,'image/icons/eye.svg','预览链接',60);
+                let codeLink=createLinkNode(selfProjects[index].codeLink,'image/icons/web-programming.svg','代码链接',60);
                 pumpWindow.appendChild(previewLink);
                 pumpWindow.appendChild(codeLink);
                 pumpWindow.classList.add('pumpWindow');
@@ -226,7 +231,8 @@
             }
             function createLinkNode(linkSrc,imgSrc,title,size) {
                 let link=document.createElement('a');
-                link.href='http://'+linkSrc;
+                link.href=linkSrc;
+                link.target='_blank';
                 let element=document.createElement('img');
                 element.src=imgSrc;
                 element.title=title;
